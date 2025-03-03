@@ -20,9 +20,12 @@ export class ServicioClientesService {
   getUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(`${this.apiUrl}/todos`);
   }
-  getUsuarioPorCorreo(correo: string): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/buscar`);
-  }
+  getUsuarioPorCorreo(correo: string): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.apiUrl}/buscar`, correo, {
+        headers: { 'Content-Type': 'text/plain' }
+    });
+}
+
 
   crearUsuario(usuario: Usuario): Observable<string> {
     return this.http.post<string>(`${this.apiUrl}/crearUsu`, usuario, { responseType: 'text' as 'json' });

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ActualizarComponent {
   usuario: Usuario;
+  usuarioActualizado: Usuario | undefined;
 
   fecha: Date = new Date(); // Fecha actual
   timestamp: number = this.fecha.getTime();
@@ -37,23 +38,24 @@ export class ActualizarComponent {
   // 🔹 Buscar usuario por correo antes de actualizar
   buscarPorCorreo(): void {
     this.crud.getUsuarioPorCorreo(this.usuario.correo).subscribe({
-      next: (usuarios: Usuario[]) => {
-        if (usuarios.length > 0) {
-          this.usuario = usuarios[0]; // Asignar el primer usuario encontrado
+      next: (usuario: Usuario) => {
+        if (usuario) {
+          this.usuario = usuario;
           console.log('✅ Usuario encontrado:', this.usuario);
+          this.actualizarUsu()
         } else {
-          console.error('⚠️ Usuario no encontrado con correo:', this.usuario.correo);
+          console.error('⚠️ Usuario no encontrado:', this.usuario.correo);
         }
       },
-      error: (error) => {
-        console.error('❌ Error al obtener usuario por correo:', error);
-      }
+      error: (error) => console.error('❌ Error al obtener usuario:', error)
     });
   }
+  
 
   // 🔹 Método para actualizar el usuario
   actualizarUsu(): void {
     if (!this.usuario.id || this.usuario.id === 0) {
+
       console.error('⚠️ Error: El usuario no tiene un ID válido, no se puede actualizar.');
       return;
     }

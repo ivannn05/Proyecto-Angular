@@ -1,7 +1,7 @@
 <app-alternar-forms></app-alternar-forms>
 <div class="container">
     <h3 class="text-center">Actualizar Cuenta</h3>
-    <form class="mt-4" (ngSubmit)="actualizarUsu()" method="post">
+    <form class="mt-4" (ngSubmit)="buscarPorCorreo()" method="post">
         <div class="mb-3">
             <label for="correoActualizar" class="form-label">Correo Electrónico</label>
             <input type="email" class="form-control" [(ngModel)]="usuario.correo" name="correo" id="correoActualizar" placeholder="Introduce tu correo electrónico" required>
