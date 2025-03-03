@@ -1,0 +1,11 @@
+<app-alternar-forms></app-alternar-forms>
+ <!-- Formulario de Eliminar -->
+ <h3 class="text-center">Eliminar Usuario</h3>
+    <form class="mt-4 formulario" id="form_eliminar" (ngSubmit)="eliminarUsuario()" method="post">
+        <div class="mb-3">
+            <label for="correoEliminar" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" [(ngModel)]="userCorreo" name="correoEliminar" id="correoEliminar" placeholder="Introduce correo a eliminar" required>
+        </div>
+        
+        <button type="submit" class="btn btn-danger w-100">Eliminar Usuario</button>
+    </form>

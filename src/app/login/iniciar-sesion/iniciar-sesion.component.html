@@ -1,0 +1,25 @@
+<app-alternar-forms></app-alternar-forms>
+<div class="container my-4">
+    
+    <h3 class="text-center">Iniciar Cuenta</h3>
+    <div class="tab-content" id="myTabContent">
+        <!-- Formulario de Login -->
+        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+            <form class="mt-4 formulario" id="form_login" (ngSubmit)="loginUsuario()" method="post">
+                <div class="mb-3">
+                    <label for="correoLogin" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" [(ngModel)]="userName" name="correoLogin" id="correoLogin" placeholder="Introduce tu correo electrónico" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contrasenyaLogin" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" [(ngModel)]="userPassword" name="contrasenyaLogin" id="contrasenyaLogin" placeholder="Introduce tu contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+            </form>
+        </div>
+
+       
+
+       
+    </div>
+</div>

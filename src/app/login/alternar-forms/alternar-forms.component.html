@@ -1,0 +1,18 @@
+<h2 class="text-center mb-4">Acceso a tu Cuenta</h2>
+
+    <!-- Pestañas para alternar entre Login, Registro y Eliminar -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link " id="login-tab" [routerLink]="['/login']"  data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="false">Iniciar Sesión</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="register-tab" [routerLink]="['/registro']" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Registrarse</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="eliminar-tab" [routerLink]="['/eliminar']"  data-bs-toggle="tab" data-bs-target="#eliminar" type="button" role="tab" aria-controls="eliminar" aria-selected="false">Eliminar</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="actualizar-tab" [routerLink]="['/actualizar']" data-bs-toggle="tab" data-bs-target="#actualizar" type="button" role="tab" aria-controls="actualizar" aria-selected="false">Actualizar</button>
+        </li>
+    </ul>
+    
