@@ -10,12 +10,13 @@ import { IniciarSesionComponent } from './login/iniciar-sesion/iniciar-sesion.co
 import { RegistroComponent } from './login/registro/registro.component';
 import { EliminarComponent } from './login/eliminar/eliminar.component';
 import { ActualizarComponent } from './login/actualizar/actualizar.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     {path: "login", component: IniciarSesionComponent},
     {path: "registro", component: RegistroComponent},
-    {path: "eliminar", component: EliminarComponent},
-    {path: "actualizar", component: ActualizarComponent},
+    {path: "eliminar", component: EliminarComponent, canActivate:[authGuard]},
+    {path: "actualizar", component: ActualizarComponent, canActivate:[authGuard]},
     {path: "", component: InicioComponent},
     {path: "inicio", component: InicioComponent},
     {path: "material/macetas", component: MacetasComponent},

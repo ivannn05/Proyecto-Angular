@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class ServicioClientesService {
 
   private apiUrl = 'http://localhost:8081/api/usuarios';
+  usuario!: Usuario;
 
   constructor(private http: HttpClient) {}
 
@@ -25,6 +26,7 @@ export class ServicioClientesService {
         headers: { 'Content-Type': 'text/plain' }
     });
 }
+
 
 
   crearUsuario(usuario: Usuario): Observable<string> {

@@ -14,13 +14,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class ActualizarComponent {
   usuario: Usuario;
-  usuarioActualizado: Usuario | undefined;
+
 
   fecha: Date = new Date(); // Fecha actual
   timestamp: number = this.fecha.getTime();
 
   constructor(private http: HttpClient) {
-    this.usuario = {
+    /* this.usuario = {
       id: 0,
       nombre: '',
       apellidos: '',
@@ -29,7 +29,8 @@ export class ActualizarComponent {
       contrasena: '',
       rol: '',
       fechaRegistro: this.timestamp,
-    };
+    }; */
+    this.usuario = this.crud.usuario
   }
 
   crud = inject(ServicioClientesService);
