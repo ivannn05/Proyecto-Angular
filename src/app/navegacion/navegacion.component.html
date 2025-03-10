@@ -57,8 +57,13 @@
                 <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="nav-link">
                     <i class=" icono bi bi-person"></i> 
                   </a>
-                   <!-- Si está autenticado, mostrar el botón de cerrar sesión -->
-       
+                  <!-- Si el usuario está autenticado, muestra el botón de cerrar sesión -->
+<button *ngIf="isAuthenticated()" (click)="logout()" class="btn btn-outline-danger">
+    Cerrar sesión
+  </button>
+  
+
+  
                   
             </div>
         </div>
